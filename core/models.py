@@ -14,12 +14,12 @@ class Persona(models.Model):
     class Meta:
         abstract = True  # Indica a Django que solo se usará para herencia
 
-# 3. Clase Hija de Ejemplo (Crea la tabla core_profesor con su id automático)
-class Profesor(Persona):
+# 3. Clase Hija de Ejemplo (Crea la tabla core_docente con su id automático)
+class Docente(Persona):
     usuario = models.OneToOneField(
         Usuario, 
         on_delete=models.CASCADE, 
-        related_name='perfil_profesor'
+        related_name='perfil_docente'
     )
     legajo = models.CharField(max_length=20, unique=True)
     especialidad = models.CharField(max_length=100)
